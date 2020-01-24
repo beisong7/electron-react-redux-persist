@@ -1,0 +1,63 @@
+{
+  "name": "react-redux-electron",
+  "version": "0.1.0",
+  "private": true,
+  "description": "boiler-plate-react-redux-electron",
+  "author": "Benjamin Isong",
+  "build": {
+    "appId": "com.electron.react-redux-boiler"
+  },
+  "main": "public/electron.js",
+  "homepage": "./",
+  "dependencies": {
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.1",
+    "bootstrap": "^4.4.1",
+    "concurrently": "^5.0.2",
+    "cross-env": "^6.0.3",
+    "electron-is-dev": "^1.1.0",
+    "moment": "^2.24.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
+    "react-moment": "^0.9.7",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "3.3.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.3.0",
+    "wait-on": "^4.0.0"
+  },
+  "devDependencies": {
+    "electron": "7.1.9",
+    "electron-builder": "^22.2.0"
+  },
+  "scripts": {
+    "react-start": "react-scripts start",
+    "react-build": "react-scripts build",
+    "react-test": "react-scripts test --env=jsdom",
+    "react-eject": "react-scripts eject",
+    "electron-build": "electron-builder",
+    "release": "yarn react-build && electron-builder --publish=always",
+    "build": "yarn react-build && yarn electron-build",
+    "start": "concurrently \"cross-env BROWSER=none yarn react-start\" \"wait-on http://localhost:3000 && electron .\""
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
